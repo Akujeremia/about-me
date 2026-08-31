@@ -1,0 +1,2875 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="Portfolio pribadi Jeremi - Networking, Server, Programming dan Technology Enthusiast"
+    >
+
+    <title>About me</title>
+
+
+    <style>
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+
+        :root {
+
+            --bg: #f7f8fc;
+            --bg-secondary: #ffffff;
+            --card: #ffffff;
+
+            --text: #111827;
+            --text-secondary: #4b5563;
+            --muted: #6b7280;
+
+            --border: #e5e7eb;
+
+            --primary: #5b4bdb;
+            --secondary: #0099cc;
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #5b4bdb,
+                    #0099cc
+                );
+
+            --shadow:
+                0 15px 40px
+                rgba(0, 0, 0, 0.08);
+        }
+
+
+        body.dark {
+
+            --bg: #080b14;
+            --bg-secondary: #0e1320;
+            --card: rgba(255, 255, 255, 0.05);
+
+            --text: #f5f7ff;
+            --text-secondary: #c1c7d6;
+            --muted: #9da6bb;
+
+            --border:
+                rgba(255, 255, 255, 0.1);
+
+            --primary: #7c5cff;
+            --secondary: #00d4ff;
+
+            --gradient:
+                linear-gradient(
+                    135deg,
+                    #7c5cff,
+                    #00d4ff
+                );
+
+            --shadow:
+                0 20px 60px
+                rgba(0, 0, 0, 0.35);
+        }
+
+
+        body {
+
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(91, 75, 219, 0.08),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(0, 153, 204, 0.07),
+                    transparent 30%
+                ),
+
+                var(--bg);
+
+            color: var(--text);
+
+            line-height: 1.6;
+
+            overflow-x: hidden;
+
+            transition:
+                background 0.3s ease,
+                color 0.3s ease;
+        }
+
+
+        body.dark {
+
+            background:
+
+                radial-gradient(
+                    circle at 10% 20%,
+                    rgba(124, 92, 255, 0.12),
+                    transparent 30%
+                ),
+
+                radial-gradient(
+                    circle at 90% 80%,
+                    rgba(0, 212, 255, 0.10),
+                    transparent 30%
+                ),
+
+                var(--bg);
+        }
+
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        ul {
+            list-style: none;
+        }
+
+
+        .container {
+
+            width: 90%;
+
+            max-width: 1150px;
+
+            margin: auto;
+        }
+
+
+        section {
+
+            padding: 100px 0;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 55px;
+        }
+
+
+        .section-title span {
+
+            color: var(--secondary);
+
+            font-size: 14px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 40px;
+
+            margin-top: 10px;
+        }
+
+
+        .section-title p {
+
+            color: var(--muted);
+
+            margin-top: 10px;
+        }
+
+        header {
+
+            position: fixed;
+
+            top: 0;
+            left: 0;
+
+            width: 100%;
+
+            z-index: 1000;
+
+            backdrop-filter: blur(15px);
+
+            background:
+                rgba(255, 255, 255, 0.78);
+
+            border-bottom:
+                1px solid var(--border);
+        }
+
+
+        body.dark header {
+
+            background:
+                rgba(8, 11, 20, 0.78);
+        }
+
+
+        nav {
+
+            height: 75px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: 800;
+        }
+
+
+        .logo span {
+
+            color: var(--secondary);
+        }
+
+
+        .nav-right {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 20px;
+        }
+
+
+        .nav-links {
+
+            display: flex;
+
+            gap: 30px;
+        }
+
+
+        .nav-links a {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+
+        .nav-links a:hover {
+
+            color: var(--secondary);
+        }
+
+
+
+        .theme-toggle {
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 50%;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+
+        .theme-toggle:hover {
+
+            transform: translateY(-3px);
+
+            border-color: var(--secondary);
+        }
+
+
+        .theme-icon {
+
+            width: 19px;
+
+            height: 19px;
+        }
+
+
+        .menu-btn {
+
+            display: none;
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 10px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            color: var(--text);
+
+            cursor: pointer;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+
+        .menu-btn svg {
+
+            width: 21px;
+
+            height: 21px;
+        }
+
+
+
+
+        #home {
+
+            min-height: 100vh;
+
+            display: flex;
+
+            align-items: center;
+
+            padding-top: 100px;
+        }
+
+
+        .hero {
+
+            display: grid;
+
+            grid-template-columns:
+                1.2fr 0.8fr;
+
+            gap: 60px;
+
+            align-items: center;
+        }
+
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 8px 15px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 50px;
+
+            color: var(--secondary);
+
+            background:
+                rgba(0, 153, 204, 0.05);
+
+            font-size: 13px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero h1 {
+
+            font-size:
+                clamp(45px, 7vw, 78px);
+
+            line-height: 1.05;
+
+            margin-bottom: 20px;
+        }
+
+
+        .gradient-text {
+
+            background: var(--gradient);
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            color: transparent;
+        }
+
+
+        .hero h3 {
+
+            color: var(--muted);
+
+            font-size: 22px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .hero p {
+
+            color: var(--muted);
+
+            max-width: 600px;
+
+            margin-bottom: 30px;
+        }
+
+
+
+
+        .buttons {
+
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .btn {
+
+            padding: 13px 22px;
+
+            border-radius: 10px;
+
+            font-weight: bold;
+
+            font-size: 14px;
+
+            transition: 0.3s;
+
+            border:
+                1px solid var(--border);
+        }
+
+
+        .btn-primary {
+
+            background: var(--gradient);
+
+            color: white;
+
+            border: none;
+        }
+
+
+        .btn-secondary {
+
+            background: var(--card);
+        }
+
+
+        .btn:hover {
+
+            transform: translateY(-3px);
+        }
+
+
+        .hero-visual {
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .profile-card {
+
+            width: 310px;
+
+            height: 380px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(124, 92, 255, 0.16),
+                    rgba(0, 212, 255, 0.05)
+                );
+
+            backdrop-filter: blur(20px);
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            position: relative;
+
+            box-shadow: var(--shadow);
+        }
+
+
+
+        .profile-circle {
+
+            width: 230px;
+
+            height: 230px;
+
+            border-radius: 50%;
+
+            overflow: hidden;
+
+            position: relative;
+
+            flex-shrink: 0;
+
+            border:
+                4px solid rgba(
+                    255,
+                    255,
+                    255,
+                    0.7
+                );
+
+            box-shadow:
+                0 15px 35px
+                rgba(0, 0, 0, 0.15);
+        }
+
+
+        .profile-circle img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            object-position: center 25%;
+
+            display: block;
+        }
+
+
+        .floating {
+
+            position: absolute;
+
+            padding: 10px 15px;
+
+            border-radius: 10px;
+
+            background: var(--bg-secondary);
+
+            border:
+                1px solid var(--border);
+
+            font-size: 13px;
+
+            animation:
+                float 4s
+                ease-in-out
+                infinite;
+        }
+
+
+        .floating.one {
+
+            top: 30px;
+
+            right: -35px;
+        }
+
+
+        .floating.two {
+
+            bottom: 50px;
+
+            left: -35px;
+
+            animation-delay: 1s;
+        }
+
+
+        @keyframes float {
+
+            0%,
+            100% {
+
+                transform: translateY(0);
+            }
+
+            50% {
+
+                transform: translateY(-12px);
+            }
+        }
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+
+        .about-text h3 {
+
+            font-size: 30px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .about-text p {
+
+            color: var(--muted);
+
+            margin-bottom: 15px;
+        }
+
+
+        .info-box {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 15px;
+        }
+
+
+        .info {
+
+            padding: 20px;
+
+            border-radius: 15px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            transition: 0.3s;
+        }
+
+
+        .info:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .info strong {
+
+            display: block;
+
+            margin-bottom: 5px;
+        }
+
+
+        .info span {
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        .education-history {
+
+            margin-top: 80px;
+
+            padding-top: 60px;
+
+            border-top:
+                1px solid var(--border);
+        }
+
+
+        .history-title {
+
+            margin-bottom: 45px;
+        }
+
+
+        .history-title span {
+
+            color: var(--secondary);
+
+            font-size: 13px;
+
+            font-weight: bold;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+        }
+
+
+        .history-title h3 {
+
+            font-size: 30px;
+
+            margin-top: 8px;
+        }
+
+
+        .education-list {
+
+            max-width: 850px;
+        }
+
+
+        .education-item {
+
+            display: grid;
+
+            grid-template-columns:
+                130px 30px 1fr;
+
+            gap: 20px;
+
+            min-height: 110px;
+        }
+
+
+        .education-year {
+
+            color: var(--secondary);
+
+            font-size: 14px;
+
+            font-weight: 600;
+
+            padding-top: 3px;
+
+            text-align: right;
+        }
+
+
+        .education-line {
+
+            position: relative;
+
+            display: flex;
+
+            justify-content: center;
+        }
+
+
+        .education-line::before {
+
+            content: "";
+
+            position: absolute;
+
+            top: 15px;
+
+            bottom: -15px;
+
+            width: 1px;
+
+            background: var(--border);
+        }
+
+
+        .education-item:last-child
+        .education-line::before {
+
+            display: none;
+        }
+
+
+        .education-dot {
+
+            width: 12px;
+
+            height: 12px;
+
+            border-radius: 50%;
+
+            background: var(--secondary);
+
+            position: relative;
+
+            z-index: 2;
+
+            box-shadow:
+                0 0 12px
+                rgba(0, 212, 255, 0.4);
+        }
+
+
+        .education-content {
+
+            padding-bottom: 35px;
+        }
+
+
+        .education-content h4 {
+
+            font-size: 18px;
+
+            margin-bottom: 6px;
+        }
+
+
+        .education-content p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+
+        .experience-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .experience-card {
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+
+        .experience-card:hover {
+
+            transform: translateY(-8px);
+
+            border-color:
+                rgba(0, 212, 255, 0.4);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .experience-image {
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            overflow: hidden;
+
+            background: var(--gradient);
+        }
+
+
+        .experience-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+
+        .experience-card:hover
+        .experience-image img {
+
+            transform: scale(1.05);
+        }
+
+
+        .experience-content {
+
+            padding: 25px;
+        }
+
+
+        .experience-category {
+
+            font-size: 11px;
+
+            text-transform: uppercase;
+
+            letter-spacing: 2px;
+
+            color: var(--primary);
+
+            font-weight: bold;
+        }
+
+
+        .experience-content h3 {
+
+            font-size: 21px;
+
+            margin: 7px 0 10px;
+        }
+
+
+        .experience-content p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+
+            margin-bottom: 18px;
+        }
+
+
+
+        .tags {
+
+            display: flex;
+
+            gap: 8px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .tag {
+
+            font-size: 11px;
+
+            padding: 5px 9px;
+
+            border-radius: 6px;
+
+            background:
+                rgba(124, 92, 255, 0.15);
+
+            color: var(--primary);
+        }
+
+
+
+        .certificate-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+
+        .certificate-card {
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+
+        .certificate-card:hover {
+
+            transform: translateY(-8px);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .certificate-image {
+
+            width: 100%;
+
+            aspect-ratio: 16 / 9;
+
+            overflow: hidden;
+
+            background: var(--gradient);
+        }
+
+
+        .certificate-image img {
+
+            width: 100%;
+
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+
+            transition:
+                transform 0.5s ease;
+        }
+
+
+        .certificate-card:hover
+        .certificate-image img {
+
+            transform: scale(1.04);
+        }
+
+
+        .certificate-content {
+
+            padding: 25px;
+        }
+
+
+        .certificate-content > span {
+
+            color: var(--secondary);
+
+            font-size: 12px;
+        }
+
+
+        .certificate-content h3 {
+
+            margin: 7px 0 10px;
+        }
+
+
+        .certificate-content p {
+
+            color: var(--muted);
+
+            font-size: 14px;
+        }
+
+
+        .contact-box {
+
+            max-width: 800px;
+
+            margin: auto;
+
+            padding: 45px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            border:
+                1px solid var(--border);
+
+            background: var(--card);
+
+            box-shadow: var(--shadow);
+        }
+
+
+        .contact-box h2 {
+
+            font-size: 35px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .contact-box p {
+
+            color: var(--muted);
+
+            margin-bottom: 25px;
+        }
+
+
+        .socials {
+
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+
+        .social {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 12px 18px;
+
+            border:
+                1px solid var(--border);
+
+            border-radius: 10px;
+
+            background: var(--bg-secondary);
+
+            transition: 0.3s;
+        }
+
+
+        .social:hover {
+
+            transform: translateY(-3px);
+
+            border-color: var(--secondary);
+
+            color: var(--secondary);
+        }
+
+
+        .social svg {
+
+            width: 20px;
+
+            height: 20px;
+
+            fill: currentColor;
+        }
+
+
+        footer {
+
+            padding: 30px 0;
+
+            text-align: center;
+
+            border-top:
+                1px solid var(--border);
+
+            color: var(--muted);
+
+            font-size: 13px;
+        }
+
+
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(30px);
+
+            transition: 0.8s ease;
+        }
+
+
+        .reveal.active {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+
+
+        @media (max-width: 900px) {
+
+            .hero {
+
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+
+            .hero p {
+
+                margin-left: auto;
+
+                margin-right: auto;
+            }
+
+
+            .buttons {
+
+                justify-content: center;
+            }
+
+
+            .hero-visual {
+
+                margin-top: 20px;
+            }
+
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .experience-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .certificate-grid {
+
+                grid-template-columns:
+                    repeat(2, 1fr);
+            }
+        }
+
+
+        @media (max-width: 650px) {
+
+            .nav-links {
+
+                position: absolute;
+
+                top: 75px;
+
+                left: 0;
+
+                width: 100%;
+
+                padding: 25px;
+
+                background:
+                    var(--bg-secondary);
+
+                flex-direction: column;
+
+                text-align: center;
+
+                display: none;
+
+                border-bottom:
+                    1px solid var(--border);
+            }
+
+
+            .nav-links.active {
+
+                display: flex;
+            }
+
+
+            .menu-btn {
+
+                display: flex;
+            }
+
+
+            .section-title h2 {
+
+                font-size: 32px;
+            }
+
+
+            .info-box {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .certificate-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+
+            .profile-card {
+
+                width: 270px;
+
+                height: 330px;
+            }
+
+
+            .profile-circle {
+
+                width: 180px;
+
+                height: 180px;
+            }
+
+
+            .floating.one {
+
+                right: -10px;
+            }
+
+
+            .floating.two {
+
+                left: -10px;
+            }
+
+
+            .contact-box {
+
+                padding: 30px 20px;
+            }
+
+
+            .social {
+
+                width: 100%;
+
+                justify-content: center;
+            }
+
+
+            .education-item {
+
+                grid-template-columns:
+                    90px 25px 1fr;
+
+                gap: 10px;
+            }
+
+
+            .education-year {
+
+                font-size: 12px;
+            }
+
+
+            .education-content h4 {
+
+                font-size: 16px;
+            }
+
+
+            .education-content p {
+
+                font-size: 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <a
+                    href="#home"
+                    class="logo"
+                >
+                    about me<span>.</span>
+                </a>
+
+
+                <div class="nav-right">
+
+                    <ul
+                        class="nav-links"
+                        id="navLinks"
+                    >
+
+                        <li>
+                            <a href="#home">
+                                Home
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#about">
+                                About
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#experience">
+                                Pengalaman
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#certificates">
+                                Sertifikat
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="#contact">
+                                Contact
+                            </a>
+                        </li>
+
+                    </ul>
+
+
+                    <!-- THEME TOGGLE -->
+
+                    <button
+                        class="theme-toggle"
+                        id="themeToggle"
+                        aria-label="Ganti tema"
+                    >
+
+                        <!-- SUN -->
+
+                        <svg
+                            class="theme-icon"
+                            id="sunIcon"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="4"
+                            />
+
+                            <path d="
+                                M12 2v2
+                                M12 20v2
+                                M4.93 4.93l1.41 1.41
+                                M17.66 17.66l1.41 1.41
+                                M2 12h2
+                                M20 12h2
+                                M4.93 19.07l1.41-1.41
+                                M17.66 6.34l1.41-1.41
+                            "/>
+
+                        </svg>
+
+
+                        <!-- MOON -->
+
+                        <svg
+                            class="theme-icon"
+                            id="moonIcon"
+                            viewBox="0 0 24 24"
+                            fill="currentColor"
+                            style="display:none;"
+                        >
+
+                            <path d="
+                                M21 12.79
+                                A9 9 0 1 1
+                                11.21 3
+                                7 7 0 0 0
+                                21 12.79Z
+                            "/>
+
+                        </svg>
+
+                    </button>
+
+
+                    <!-- MOBILE MENU -->
+
+                    <button
+                        class="menu-btn"
+                        id="menuBtn"
+                        aria-label="Menu"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                        >
+
+                            <line
+                                x1="3"
+                                y1="6"
+                                x2="21"
+                                y2="6"
+                            />
+
+                            <line
+                                x1="3"
+                                y1="12"
+                                x2="21"
+                                y2="12"
+                            />
+
+                            <line
+                                x1="3"
+                                y1="18"
+                                x2="21"
+                                y2="18"
+                            />
+
+                        </svg>
+
+                    </button>
+
+                </div>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <section id="home">
+
+        <div class="container">
+
+            <div class="hero">
+
+
+                <div class="hero-content reveal">
+
+                    <span class="badge">
+                        Welcome to my website
+                    </span>
+
+
+                    <h1>
+
+                        Hi, I'm
+
+                        <br>
+
+                        <span class="gradient-text">
+                            Raditya
+                        </span>
+
+                    </h1>
+
+
+                    <h3>
+                        Seorang mahasiswa baru PENS
+                    </h3>
+
+
+                    <p>
+                        Saya anak yang tertarik oleh hal-hal baru.
+                        Saya juga tertarik dengan dunia IT karena di zaman
+                        ini teknologi berkembang pesat, dan itu yang membuat
+                        saya meminati dunia IT.
+                    </p>
+
+
+                    <div class="buttons">
+
+                        <a
+                            href="#experience"
+                            class="btn btn-primary"
+                        >
+                            Lihat Pengalaman
+                        </a>
+
+
+                        <a
+                            href="#contact"
+                            class="btn btn-secondary"
+                        >
+                            Hubungi Saya
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOTO PROFIL -->
+
+                <div class="hero-visual reveal">
+
+                    <div class="profile-card">
+
+                        <div class="profile-circle">
+
+                            <img
+                                src="images/radit depan pens.jpeg"
+                                alt="Foto Raditya"
+                            >
+
+                        </div>
+
+
+                        <div class="floating one">
+                            Developer
+                        </div>
+
+
+                        <div class="floating two">
+                            Guitarist
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <section id="about">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    About Me
+                </span>
+
+                <h2>
+                    Tentang Saya
+                </h2>
+
+                <p>
+                    Kepo yahh?
+                </p>
+
+            </div>
+
+
+            <div class="about-grid">
+
+
+                <div class="about-text reveal">
+
+                    <h3>
+                        Tentang aku
+                    </h3>
+
+
+                    <p>
+                        Hai!! Aku Raditya Jeremia Kriswanto Putra, panggil
+                        saja aku Radit. Aku saat ini berusia 18 tahun dan
+                        sekarang aku adalah mahasiswa Politeknik Elektronika Negeri Surabaya. Aku tertarikk
+                        dengan teknologi di masa ini yang sangat maju, hal itulah yang menjadi 
+                        semangatku dalam belajar tentang teknologi
+                    </p>
+
+
+                    <p>
+                        Btw selain di dunia teknologi, aku juga tertarik pada dunia seni apalagi 
+                        seni musik. Saya memiliki hobi yaituu bermain alat musik gitar dan bass, saya
+                        ingin terus mengasah kelebihan saya.
+                    </p>
+
+                </div>
+
+
+                <div class="info-box reveal">
+
+
+                    <div class="info">
+
+                        <strong>
+                            Pendidikan saat ini
+                        </strong>
+
+                        <span>
+                            Politeknik Elektronika Negeri Surabaya
+                        </span>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <strong>
+                            Prodi
+                        </strong>
+
+                        <span>
+                            S.Tr Sains Data Terapan
+                        </span>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <strong>
+                            Hobi
+                        </strong>
+
+                        <span>
+                            Bermain gitar & ngoding
+                        </span>
+
+                    </div>
+
+
+                    <div class="info">
+
+                        <strong>
+                            Cita-cita
+                        </strong>
+
+                        <span>
+                            Gitaris handal dan Data engineer
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="education-history reveal">
+
+                <div class="history-title">
+
+                    <span>
+                        Education History
+                    </span>
+
+                    <h3>
+                        Riwayat Pendidikan
+                    </h3>
+
+                </div>
+
+
+                <div class="education-list">
+
+
+                    <!-- TK -->
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+                            2012 — 2014
+                        </div>
+
+                        <div class="education-line">
+
+                            <div class="education-dot"></div>
+
+                        </div>
+
+                        <div class="education-content">
+
+                            <h4>
+                                TK Setia Budhi Gresik
+                            </h4>
+
+                            <p>
+                                Menempuh pendidikan tingkat
+                                taman kanak-kanak.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SD -->
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+                            2014 — 2020
+                        </div>
+
+                        <div class="education-line">
+
+                            <div class="education-dot"></div>
+
+                        </div>
+
+                        <div class="education-content">
+
+                            <h4>
+                                UPT SD Negeri 5 Gresik
+                            </h4>
+
+                            <p>
+                                Menempuh pendidikan sekolah dasar.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SMP -->
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+                            2020 — 2023
+                        </div>
+
+                        <div class="education-line">
+
+                            <div class="education-dot"></div>
+
+                        </div>
+
+                        <div class="education-content">
+
+                            <h4>
+                                UPT SMP Negeri 4 Gresik
+                            </h4>
+
+                            <p>
+                                Menempuh pendidikan sekolah
+                                menengah pertama.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- SMK -->
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+                            2023 — 2026
+                        </div>
+
+                        <div class="education-line">
+
+                            <div class="education-dot"></div>
+
+                        </div>
+
+                        <div class="education-content">
+
+                            <h4>
+                                SMK Negeri 1 Cerme
+                            </h4>
+
+                            <p>
+                                Jurusan Teknik Komputer dan Jaringan
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <!-- cool yeah -->
+
+                    <div class="education-item">
+
+                        <div class="education-year">
+                            2026 - sekarang
+                        </div>
+
+                        <div class="education-line">
+
+                            <div class="education-dot"></div>
+
+                        </div>
+
+                        <div class="education-content">
+
+                            <h4>
+                                Politeknik Elektronika Negeri Surabaya 
+                            </h4>
+
+                            <p>
+                                Prodi D4 Sains Data Terapan.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="experience">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    Experience
+                </span>
+
+                <h2>
+                    Pengalaman
+                </h2>
+
+                <p>
+                    Pengalaman dan kegiatan yang pernah saya jalani
+                </p>
+
+            </div>
+
+
+            <div class="experience-grid">
+
+
+                  <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/win smp.png"
+                            alt="Pengalaman 1"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                          
+                        </span>
+
+                        <h3>
+                            Juara 1 OPSI bidang Teknologi tingkat kabupaten
+                        </h3>
+
+                        <p>
+                            Mengikuti lomba OPSI bidang teknologi dan mendapatkan Juara 1
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/harlah 26.jpeg"
+                            alt="Pengalaman 2"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                        </span>
+
+                        <h3>
+                            Menjadi ketua pelaksana Harlah
+                        </h3>
+
+                        <p>
+                            Menjadi ketua pelaksana acara Hari lahir
+                            SMK Negeri 1 Cerme Gresik ke 26
+                        </p>
+
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/jpvot.jpeg"
+                            alt="Pengalaman 3"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                            
+                        </span>
+
+                        <h3>
+                            Menjadi ketua pelaksana JPVOT
+                        </h3>
+
+                        <p>
+                            Menjadi ketua pelaksana lomba akademik tingkat antar SMP
+                            se-kabupaten Gresik
+                        </p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/IMG_0810.JPG"
+                            alt="Pengalaman 4"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                        </span>
+
+                        <h3>
+                            Menjadi Ketua pelaksana Video Angkatan
+                        </h3>
+
+                        <p>
+                            Menjadi ketua pelaksana video kenang kenangan 1 angkatan
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/magang.jpeg"
+                            alt="Pengalaman 5"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                        </span>
+
+                        <h3>
+                            Praktik Kerja Lapangan
+                        </h3>
+
+                        <p>
+                            Menjalankan praktik kerja di PT. Radnext Digal Indonesia
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/osis (1).jpeg"
+                            alt="Pengalaman 6"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                        </span>
+
+                        <h3>
+                            Organisasi Sekolah
+                        </h3>
+
+                        <p>
+                            Mengikuti kegiatan organisasi sekolah dan
+                            terlibat dalam berbagai kegiatan siswa.
+                        </p>
+
+                        <div class="tags">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/VG.jpeg"
+                            alt="Pengalaman 7"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+                        </span>
+
+                        <h3>
+                            Juara Lomba VG
+                        </h3>
+
+                        <p>
+                            Mendapatkan juara 2 lomba vocal group Kidung Greja
+                            Se-Kota Surabaya
+                        </p>
+
+                        <div class="tags">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="experience-card reveal">
+
+                    <div class="experience-image">
+
+                        <img
+                            src="images/IC.png"
+                            alt="Pengalaman 8"
+                        >
+
+                    </div>
+
+                    <div class="experience-content">
+
+                        <span class="experience-category">
+
+                        </span>
+
+                        <h3>
+                            Menjadi ketua pelaksana
+                        </h3>
+
+                        <p>
+                        Menjadi ketua pelaksana di event kemerdekaan di sekolah
+                        </p>
+
+                        <div class="tags">
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section id="certificates">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    Certificates
+                </span>
+
+                <h2>
+                    Sertifikat
+                </h2>
+
+                <p>
+                    Sertifikat dan pencapaian yang saya miliki
+                </p>
+
+            </div>
+
+
+            <div class="certificate-grid">
+
+
+
+                <div class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <img
+                            src="images/cipta web.jpeg"
+                            alt="Sertifikat 1"
+                        >
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2024
+                        </span>
+
+                        <h3>
+                            Sertifikat Pelatihan membuat website
+                        </h3>
+
+                        <p>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <img
+                            src="images/ipv6.jpeg"
+                            alt="Sertifikat 2"
+                        >
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2024
+                        </span>
+
+                        <h3>
+                            Sertifikat Implementasi IPV6
+                        </h3>
+
+                        <p>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <img
+                            src="images/linux ukm jember.jpeg"
+                            alt="Sertifikat 3"
+                        >
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2024
+                        </span>
+
+                        <h3>
+                            Sertifikat workshop pelatihan Linux
+                        </h3>
+
+                        <p>
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <img
+                            src="images/pelatihan seo.jpeg"
+                            alt="Sertifikat 4"
+                        >
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2024
+                        </span>
+
+                        <h3>
+                            Sertifikat SEO (Search Engine OPtimal)
+                        </h3>
+
+                        <p>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+
+                <div class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <img
+                            src="images/umkm godig.jpeg"
+                            alt="Sertifikat 5"
+                        >
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2024
+                        </span>
+
+                        <h3>
+                            Sertifikat Partisipan UMKM GO DIgital
+                        </h3>
+
+                        <p>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="certificate-card reveal">
+
+                    <div class="certificate-image">
+
+                        <img
+                            src="images/SIC.png"
+                            alt="Sertifikat 6"
+                        >
+
+                    </div>
+
+                    <div class="certificate-content">
+
+                        <span>
+                            2025
+                        </span>
+
+                        <h3>
+                            Sertifikat peserta lolos stage 2 Samsung Innovation Campus
+                        </h3>
+
+                        <p>
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section id="contact">
+
+        <div class="container">
+
+
+            <div class="section-title reveal">
+
+                <span>
+                    Contact
+                </span>
+
+                <h2>
+                    Mari Terhubung
+                </h2>
+
+                <p>
+                    Temukan saya melalui beberapa platform berikut
+                </p>
+
+            </div>
+
+
+            <div class="contact-box reveal">
+
+                <h2>
+                    Hubungi Saya
+                </h2>
+
+
+                <p>
+                    Jika ingin berdiskusi mengenai teknologi,
+                    project, atau sekadar terhubung, silakan
+                    menghubungi saya melalui platform berikut.
+                </p>
+
+
+                <div class="socials">
+
+
+                    <a
+                        href="https://wa.me/6282132664143"
+                        target="_blank"
+                        class="social"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path d="
+                                M17.472 14.382
+                                c-.297-.149-1.758-.867-2.03-.967
+                                -.273-.099-.471-.148-.67.15
+                                -.197.297-.767.966-.94 1.164
+                                -.173.199-.347.223-.644.075
+                                -.297-.15-1.255-.463-2.39-1.475
+                                -.883-.788-1.48-1.761-1.653-2.059
+                                -.173-.297-.018-.458.13-.606
+                                .134-.133.298-.347.446-.52
+                                .149-.174.198-.298.298-.497
+                                .099-.198.05-.372-.025-.521
+                                -.075-.149-.669-1.611-.916-2.206
+                                -.242-.579-.487-.5-.669-.51
+                                -.173-.008-.372-.01-.57-.01
+                                -.198 0-.52.074-.792.372
+                                -.272.297-1.04 1.016-1.04 2.479
+                                0 1.462 1.065 2.875 1.213 3.074
+                                .149.198 2.095 3.2 5.076 4.487
+                                .709.306 1.262.489 1.694.625
+                                .712.227 1.36.195 1.872.118
+                                .571-.085 1.758-.719 2.006-1.413
+                                .248-.694.248-1.289.173-1.413
+                                -.074-.124-.272-.198-.57-.347
+                            "/>
+
+                        </svg>
+
+                        WhatsApp
+
+                    </a>
+
+
+                    <a
+                        href="https://instagram.com/radityajeremia"
+                        target="_blank"
+                        class="social"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path d="
+                                M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5
+                                A5.75 5.75 0 0116.25 22h-8.5
+                                A5.75 5.75 0 012 16.25v-8.5
+                                A5.75 5.75 0 017.75 2zm0 1.5
+                                A4.25 4.25 0 003.5 7.75v8.5
+                                a4.25 4.25 0 004.25 4.25h8.5
+                                a4.25 4.25 0 004.25-4.25v-8.5
+                                a4.25 4.25 0 00-4.25-4.25h-8.5zm8.75 2.25
+                                a1 1 0 110 2 1 1 0 010-2zM12 7
+                                a5 5 0 110 10 5 5 0 010-10zm0 1.5
+                                a3.5 3.5 0 100 7 3.5 3.5 0 000-7z
+                            "/>
+
+                        </svg>
+
+                        Instagram
+
+                    </a>
+
+
+                    <a
+                        href="mailto:emailkamu@example.com"
+                        class="social"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path d="
+                                M20 4H4
+                                a2 2 0 00-2 2v12
+                                a2 2 0 002 2h16
+                                a2 2 0 002-2V6
+                                a2 2 0 00-2-2zm0 4-8 5-8-5V6l8 5
+                                8-5v2z
+                            "/>
+
+                        </svg>
+
+                        Email
+
+                    </a>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                ©
+                <span id="year"></span>
+                Radit. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+
+
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
+
+        menuBtn.addEventListener(
+            "click",
+            () => {
+
+                navLinks.classList.toggle("active");
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener(
+                    "click",
+                    () => {
+
+                        navLinks.classList.remove("active");
+
+                    }
+                );
+
+            });
+
+
+
+
+        const themeToggle =
+            document.getElementById("themeToggle");
+
+        const sunIcon =
+            document.getElementById("sunIcon");
+
+        const moonIcon =
+            document.getElementById("moonIcon");
+
+
+        function setTheme(theme) {
+
+            if (theme === "dark") {
+
+                document.body.classList.add("dark");
+
+                sunIcon.style.display = "none";
+
+                moonIcon.style.display = "block";
+
+            }
+
+            else {
+
+                document.body.classList.remove("dark");
+
+                sunIcon.style.display = "block";
+
+                moonIcon.style.display = "none";
+
+            }
+
+
+            localStorage.setItem(
+                "theme",
+                theme
+            );
+
+        }
+
+
+        themeToggle.addEventListener(
+            "click",
+            () => {
+
+                const isDark =
+                    document.body.classList.contains("dark");
+
+
+                setTheme(
+                    isDark
+                        ? "light"
+                        : "dark"
+                );
+
+            }
+        );
+
+
+        const savedTheme =
+            localStorage.getItem("theme");
+
+
+        if (savedTheme === "dark") {
+
+            setTheme("dark");
+
+        }
+
+        else {
+
+            setTheme("light");
+
+        }
+
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        function revealOnScroll() {
+
+            const windowHeight =
+                window.innerHeight;
+
+
+            revealElements.forEach(
+                element => {
+
+                    const elementTop =
+                        element
+                            .getBoundingClientRect()
+                            .top;
+
+
+                    if (
+                        elementTop <
+                        windowHeight - 100
+                    ) {
+
+                        element.classList.add("active");
+
+                    }
+
+                }
+            );
+
+        }
+
+
+        window.addEventListener(
+            "scroll",
+            revealOnScroll
+        );
+
+
+        revealOnScroll();
+
+
+
+        document.getElementById("year").textContent =
+            new Date().getFullYear();
+
+
+        const sections =
+            document.querySelectorAll("section");
+
+        const links =
+            document.querySelectorAll(".nav-links a");
+
+
+        window.addEventListener(
+            "scroll",
+            () => {
+
+                let current = "";
+
+
+                sections.forEach(
+                    section => {
+
+                        const sectionTop =
+                            section.offsetTop - 150;
+
+                        const sectionHeight =
+                            section.clientHeight;
+
+
+                        if (
+                            window.scrollY >= sectionTop &&
+                            window.scrollY <
+                            sectionTop + sectionHeight
+                        ) {
+
+                            current =
+                                section.getAttribute("id");
+
+                        }
+
+                    }
+                );
+
+
+                links.forEach(
+                    link => {
+
+                        link.style.color = "";
+
+                        if (
+                            link.getAttribute("href") ===
+                            "#" + current
+                        ) {
+
+                            link.style.color =
+                                "var(--secondary)";
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
